@@ -1,0 +1,36 @@
+/* Marigold background theme */
+:root{ --bg-overlay: rgba(18,10,8,0.42); --card-bg: rgba(255,255,255,0.85); --card-backdrop: rgba(255,255,255,0.6); --accent: #ff6b81; --muted: #5b6168; --radius:14px; --max:1100px; }
+*{box-sizing:border-box}
+body,html{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;}
+.bg-root{min-height:100%;background-image:url('images/bg-marigold-blur.jpg');background-size:cover;background-position:center fixed;position:relative;animation:fadeBg 900ms ease;}
+/* .bg-root{ background-image:url('images/bg-marigold.jpg'); } */
+@keyframes fadeBg{ from{opacity:0} to{opacity:1} }
+.bg-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.24), rgba(0,0,0,0.32));pointer-events:none;}
+.container{max-width:var(--max);margin:0 auto;padding:28px;position:relative;z-index:2;}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;color:white}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;color:white}
+.brand .logo{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(90deg,var(--accent),#7b61ff);color:white;font-weight:800}
+.toplinks a{color:rgba(255,255,255,0.92);text-decoration:none;padding:8px 12px;border-radius:8px}
+.toplinks a.active{background:rgba(255,255,255,0.08)}
+.content-box{background:var(--card-bg);backdrop-filter: blur(6px);border-radius:var(--radius);padding:18px;box-shadow:0 12px 30px rgba(3,6,12,0.25);}
+.header-hero{display:flex;gap:24px;align-items:flex-start;padding:40px 0}
+.hero-left{flex:1;color:#111}
+.hero-title{font-size:38px;margin:0 0 10px;color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.4)}
+.hero-sub{font-size:18px;color:rgba(255,255,255,0.92);margin:0 0 18px}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:600}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#7b61ff);color:white;box-shadow:0 8px 24px rgba(123,97,255,0.12)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.16);color:white}
+.signup-card{width:360px;padding:18px;border-radius:12px;background:var(--card-backdrop);box-shadow:0 12px 30px rgba(3,6,12,0.18)}
+.input,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:18px}
+.profile{overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.92);box-shadow:0 10px 30px rgba(3,6,12,0.14);display:flex;flex-direction:column}
+.profile img{width:100%;height:220px;object-fit:cover}
+.profile .body{padding:12px;flex:1;display:flex;flex-direction:column}
+.form-page{display:flex;gap:24px;align-items:flex-start;padding:30px 0}
+.form-right{width:420px}
+.form-container{background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(3,6,12,0.12)}
+.profile-page{display:flex;gap:24px;padding:30px 0}
+.profile-card{width:320px;padding:18px;border-radius:12px;background:var(--card-bg);box-shadow:0 12px 30px rgba(3,6,12,0.12)}
+.profile-info{flex:1;padding:18px;border-radius:12px;background:var(--card-bg);box-shadow:0 10px 30px rgba(3,6,12,0.08)}
+.footer{padding:22px 0;color:rgba(255,255,255,0.9);font-size:14px}
+@media(max-width:900px){.header-hero{flex-direction:column}.signup-card{width:100%}.form-page{flex-direction:column}.form-right{width:100%}}
