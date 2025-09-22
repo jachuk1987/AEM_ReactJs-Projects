@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Component } from "react";
+import Navbar from "./components/Navbar";
+import BusinessBanner from "./components/BusinessBanner";
+import BusinessOverview from "./components/BusinessOverview";
+import ContactUs from "./components/ContactUs";
+import CardTile from "./components/CardTile";
+import Footer from "./components/Footer";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+class App extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Navbar />
+        <BusinessBanner />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 mb-5">
+              <BusinessOverview />
+            </div>
+            <div className="col-md-4 mb-5">
+              <ContactUs />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-4 mb-5">
+              <CardTile />
+            </div>
+            <div className="col-md-4 mb-5">
+              <CardTile />
+            </div>
+            <div className="col-md-4 mb-5">
+              <CardTile />
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </React.Fragment>
+    );
+  }
 }
 
-export default App
+export default App;
